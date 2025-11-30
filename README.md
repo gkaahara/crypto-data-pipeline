@@ -6,7 +6,7 @@
 [![PySpark](https://img.shields.io/badge/PySpark-3.x-blue?logo=apachespark)](https://spark.apache.org/)
 [![Delta Lake](https://img.shields.io/badge/Delta_Lake-3.x-green?logo=delta-lake)](https://delta.io/)
 
-End-to-end data pipeline implementando **medallion architecture** no **Databricks Community Edition (Free)** para análise em tempo real de criptomoedas. Otimizado para clusters limitados: processamento incremental, qualidade automatizada e zero custo.[attached_file:1]
+End-to-end data pipeline implementando **medallion architecture** no **Databricks Community Edition (Free)** para análise em tempo real de criptomoedas. Otimizado para clusters limitados: processamento incremental, qualidade automatizada e zero custo.
 
 ## 🏗️ Arquitetura Medallion (Otimizada Free Tier)
 
@@ -14,9 +14,9 @@ Bronze → Silver → Gold
 ├── Raw API (CoinGecko) + Timestamp
 ├── Clean/Validate/Standardize (Incremental)
 └── Aggregations + Analytics (Partitioned)
-- **Bronze**: Ingestão raw com `MERGE` Delta para evitar reprocessamento em clusters 2GB RAM.[attached_file:1]
-- **Silver**: Limpeza PySpark + validações (Great Expectations compatível).[attached_file:1]
-- **Gold**: Métricas business-ready (top performers, volume signals).[attached_file:1]
+- **Bronze**: Ingestão raw com `MERGE` Delta para evitar reprocessamento em clusters 2GB RAM.
+- **Silver**: Limpeza PySpark + validações (Great Expectations compatível).
+- **Gold**: Métricas business-ready (top performers, volume signals).
 
 ## 🛠️ Tech Stack (Free Tier Ready)
 
@@ -26,7 +26,7 @@ Bronze → Silver → Gold
 | PySpark | 3.x | Transformações otimizadas |
 | Delta Lake | 3.x | Incremental + Partitioning |
 | Python | 3.x | Utils + Quality checks |
-| CoinGecko API | REST | Rate-limited ingestion |[attached_file:1]
+| CoinGecko API | REST | Rate-limited ingestion |
 
 ## 🚀 Key Features & Otimizações
 
@@ -35,14 +35,14 @@ Bronze → Silver → Gold
 - ✅ **Data Quality Framework** (`data_quality.py` com nulls/uniques/referencial)
 - ✅ **Partitioned Storage** por `timestamp/coin_symbol` para queries <1s
 - ✅ **Workflow Orchestration** via Databricks Jobs (hourly crypto volatility)
-- ✅ **Free Tier Proof**: 100% funcional sem custos, dados persistem via Delta sharing[attached_file:1]
+- ✅ **Free Tier Proof**: 100% funcional sem custos, dados persistem via Delta sharing
 
 ## 📈 Business Use Cases
 
 - Daily trend analysis + top performers
 - Volume-based trading signals
 - Market cap tracking + volatility alerts
-- **Demo Metrics**: 10k+ records/hour em cluster small[attached_file:1]
+- **Demo Metrics**: 10k+ records/hour em cluster small
 
 ## 📁 Estrutura do Projeto
 
@@ -64,7 +64,7 @@ Bronze → Silver → Gold
 |---------|-------|-----------|-------|
 | Ingestão/hour | 2k records | 10k+ records | 5x |
 | Query Gold | 15s | <1s | 15x |
-| DBU consumo | High | Minimal | Sustainable |[attached_file:1]
+| DBU consumo | High | Minimal | Sustainable |
 
 ## 🧪 Quick Start (Databricks Free)
 
