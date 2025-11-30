@@ -10,13 +10,13 @@ End-to-end data pipeline implementando **medallion architecture** no **Databrick
 
 ## 🏗️ Arquitetura Medallion (Otimizada Free Tier)
 
-Bronze → Silver → Gold
-├── Raw API (CoinGecko) + Timestamp
-├── Clean/Validate/Standardize (Incremental)
-└── Aggregations + Analytics (Partitioned)
-- **Bronze**: Ingestão raw com `MERGE` Delta para evitar reprocessamento em clusters 2GB RAM.
-- **Silver**: Limpeza PySpark + validações (Great Expectations compatível).
-- **Gold**: Métricas business-ready (top performers, volume signals).
+CoinGecko API ────────→ Bronze Layer ────────→ Silver ────────→ Gold Layer
+↓ Raw JSON ↓ Delta MERGE ↓ PySpark ↓ Analytics
+↓ + Timestamp ↓ Incremental ↓ Validation ↓ Partitioned
+
+- **Bronze**: Ingestão raw com `MERGE` Delta para evitar reprocessamento em clusters 2GB RAM.[attached_file:1]
+- **Silver**: Limpeza PySpark + validações (Great Expectations compatível).[attached_file:1]
+- **Gold**: Métricas business-ready (top performers, volume signals).[attached_file:1]
 
 ## 🛠️ Tech Stack (Free Tier Ready)
 
